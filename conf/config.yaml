@@ -1,0 +1,33 @@
+# 本文件中存放配置信息
+
+# 项目
+name: "web_app"         # 项目名称
+mode: "dev"             # 项目环境
+version: "1.0.0"        # 项目版本
+port: 9002              # 服务端口
+
+# 日志
+log:
+  level: "debug"          # 日志级别
+  filename: "web_app.log" # 日志文件名字
+  max_size: 200           # 切割日志的最大容量MB
+  max_backups: 7          # 最大备份数量
+  max_age: 30             # 日志最长保留时间
+
+# mysql数据库
+mysql:
+  host: "127.0.0.1"       # 地址
+  port: 3306              # 端口
+  user: "root"            # 用户名
+  password: "root123456"  # 密码
+  db_name: "test"          # 连接的数据库名
+  max_open_conns: 200     # 最大活跃连接数量
+  max_idle_conns: 50      # 最大空闲连接数量
+
+# redis数据库
+redis:
+  host: "127.0.0.1"       # 地址
+  port: 6379              # 端口
+  password: ""            # 密码
+  db: 0                   # 数据表序号
+  pool_size: 100          # 最大连接数
