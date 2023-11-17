@@ -1,8 +1,8 @@
 package router
 
 import (
+	"goWebCli/controller"
 	"goWebCli/logger"
-	"goWebCli/setting"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -17,12 +17,11 @@ func SetUp() *gin.Engine {
 	r.Use(logger.GinLogger(), logger.GinRecovery(true))
 
 	// 分配路由
-	r.GET("/", func(c *gin.Context) {
-		c.String(http.StatusOK, "ok")
-	})
-	r.GET("/version", func(c *gin.Context) {
-		c.String(http.StatusOK, setting.Config.Version)
-	})
+	// 当请求没有匹配到任何路径时的处理
+	r.NoRoute(func(c *gin.Context) { c.JSON(http.StatusOK, gin.H{"msg": "404"}) })
+	// 业务路由
+	// 注册
+	r.POST("/signup", controller.SignUpHandler)
 
 	return r
 }

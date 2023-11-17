@@ -1,0 +1,98 @@
+{"level":"DEBUG","time":"2023-11-17T13:29:12.106+0800","caller":"30_bluebell/main.go:38","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-11-17T13:29:12.119+0800","caller":"30_bluebell/main.go:46","msg":"mysql init success..."}
+{"level":"DEBUG","time":"2023-11-17T13:29:12.120+0800","caller":"30_bluebell/main.go:54","msg":"redis init success..."}
+{"level":"INFO","time":"2023-11-17T13:38:14.449+0800","caller":"30_bluebell/main.go:94","msg":"Shutdown server ..."}
+{"level":"INFO","time":"2023-11-17T13:38:14.451+0800","caller":"30_bluebell/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-11-17T13:38:18.929+0800","caller":"30_bluebell/main.go:38","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-11-17T13:38:18.941+0800","caller":"30_bluebell/main.go:46","msg":"mysql init success..."}
+{"level":"DEBUG","time":"2023-11-17T13:38:18.942+0800","caller":"30_bluebell/main.go:54","msg":"redis init success..."}
+{"level":"INFO","time":"2023-11-17T15:09:56.509+0800","caller":"30_bluebell/main.go:94","msg":"Shutdown server ..."}
+{"level":"INFO","time":"2023-11-17T15:09:56.511+0800","caller":"30_bluebell/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-11-17T15:10:00.799+0800","caller":"30_bluebell/main.go:38","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-11-17T15:10:00.806+0800","caller":"30_bluebell/main.go:46","msg":"mysql init success..."}
+{"level":"DEBUG","time":"2023-11-17T15:10:00.808+0800","caller":"30_bluebell/main.go:54","msg":"redis init success..."}
+{"level":"ERROR","time":"2023-11-17T15:17:00.130+0800","caller":"controller/user.go:21","msg":"SignUp with invalid param","error":"EOF"}
+{"level":"INFO","time":"2023-11-17T15:17:00.132+0800","caller":"logger/logger.go:89","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"Apifox/1.0.0 (https://apifox.com)","errors":"","cost":0.002518237}
+{"level":"ERROR","time":"2023-11-17T15:17:11.953+0800","caller":"controller/user.go:21","msg":"SignUp with invalid param","error":"EOF"}
+{"level":"INFO","time":"2023-11-17T15:17:11.953+0800","caller":"logger/logger.go:89","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"username=jack","ip":"::1","user-agent":"Apifox/1.0.0 (https://apifox.com)","errors":"","cost":0.000087975}
+{"level":"ERROR","time":"2023-11-17T15:17:28.876+0800","caller":"controller/user.go:21","msg":"SignUp with invalid param","error":"EOF"}
+{"level":"INFO","time":"2023-11-17T15:17:28.878+0800","caller":"logger/logger.go:89","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"username=jack&password=123&re_password=123","ip":"::1","user-agent":"Apifox/1.0.0 (https://apifox.com)","errors":"","cost":0.00175993}
+{"level":"ERROR","time":"2023-11-17T15:20:09.500+0800","caller":"controller/user.go:21","msg":"SignUp with invalid param","error":"invalid character 'u' looking for beginning of object key string"}
+{"level":"INFO","time":"2023-11-17T15:20:09.501+0800","caller":"logger/logger.go:89","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"Apifox/1.0.0 (https://apifox.com)","errors":"","cost":0.001624234}
+{"level":"INFO","time":"2023-11-17T15:20:45.944+0800","caller":"logger/logger.go:89","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"Apifox/1.0.0 (https://apifox.com)","errors":"","cost":0.000224469}
+{"level":"ERROR","time":"2023-11-17T15:20:55.149+0800","caller":"controller/user.go:29","msg":"SignUp with invalid param"}
+{"level":"INFO","time":"2023-11-17T15:20:55.150+0800","caller":"logger/logger.go:89","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"Apifox/1.0.0 (https://apifox.com)","errors":"","cost":0.001537178}
+{"level":"ERROR","time":"2023-11-17T15:22:51.743+0800","caller":"controller/user.go:29","msg":"SignUp with invalid param"}
+{"level":"INFO","time":"2023-11-17T15:22:51.752+0800","caller":"logger/logger.go:89","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"Apifox/1.0.0 (https://apifox.com)","errors":"","cost":0.00867804}
+{"level":"ERROR","time":"2023-11-17T15:22:55.578+0800","caller":"controller/user.go:29","msg":"SignUp with invalid param"}
+{"level":"INFO","time":"2023-11-17T15:22:55.578+0800","caller":"logger/logger.go:89","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"Apifox/1.0.0 (https://apifox.com)","errors":"","cost":0.000146918}
+{"level":"INFO","time":"2023-11-17T15:23:14.363+0800","caller":"30_bluebell/main.go:94","msg":"Shutdown server ..."}
+{"level":"INFO","time":"2023-11-17T15:23:14.363+0800","caller":"30_bluebell/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-11-17T15:23:19.486+0800","caller":"30_bluebell/main.go:38","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-11-17T15:23:19.498+0800","caller":"30_bluebell/main.go:46","msg":"mysql init success..."}
+{"level":"DEBUG","time":"2023-11-17T15:23:19.500+0800","caller":"30_bluebell/main.go:54","msg":"redis init success..."}
+{"level":"INFO","time":"2023-11-17T15:23:22.164+0800","caller":"logger/logger.go:89","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"Apifox/1.0.0 (https://apifox.com)","errors":"","cost":0.000288079}
+{"level":"INFO","time":"2023-11-17T15:23:34.717+0800","caller":"30_bluebell/main.go:94","msg":"Shutdown server ..."}
+{"level":"INFO","time":"2023-11-17T15:23:34.718+0800","caller":"30_bluebell/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-11-17T15:23:36.296+0800","caller":"30_bluebell/main.go:38","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-11-17T15:23:36.301+0800","caller":"30_bluebell/main.go:46","msg":"mysql init success..."}
+{"level":"DEBUG","time":"2023-11-17T15:23:36.302+0800","caller":"30_bluebell/main.go:54","msg":"redis init success..."}
+{"level":"INFO","time":"2023-11-17T15:23:43.391+0800","caller":"logger/logger.go:89","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"Apifox/1.0.0 (https://apifox.com)","errors":"","cost":0.000244496}
+{"level":"INFO","time":"2023-11-17T15:24:36.784+0800","caller":"logger/logger.go:89","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"Apifox/1.0.0 (https://apifox.com)","errors":"","cost":0.000139465}
+{"level":"INFO","time":"2023-11-17T15:26:32.279+0800","caller":"30_bluebell/main.go:94","msg":"Shutdown server ..."}
+{"level":"INFO","time":"2023-11-17T15:26:32.281+0800","caller":"30_bluebell/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-11-17T15:26:36.525+0800","caller":"30_bluebell/main.go:38","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-11-17T15:26:36.531+0800","caller":"30_bluebell/main.go:46","msg":"mysql init success..."}
+{"level":"DEBUG","time":"2023-11-17T15:26:36.532+0800","caller":"30_bluebell/main.go:54","msg":"redis init success..."}
+{"level":"ERROR","time":"2023-11-17T15:26:39.696+0800","caller":"controller/user.go:21","msg":"SignUp with invalid param","error":"Key: 'ParamSignUp.RePassword' Error:Field validation for 'RePassword' failed on the 'required' tag"}
+{"level":"INFO","time":"2023-11-17T15:26:39.696+0800","caller":"logger/logger.go:89","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"Apifox/1.0.0 (https://apifox.com)","errors":"","cost":0.000471594}
+{"level":"INFO","time":"2023-11-17T15:28:05.818+0800","caller":"logger/logger.go:89","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"Apifox/1.0.0 (https://apifox.com)","errors":"","cost":0.000068946}
+{"level":"INFO","time":"2023-11-17T15:28:09.238+0800","caller":"logger/logger.go:89","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"Apifox/1.0.0 (https://apifox.com)","errors":"","cost":0.000049869}
+{"level":"INFO","time":"2023-11-17T15:29:23.570+0800","caller":"30_bluebell/main.go:94","msg":"Shutdown server ..."}
+{"level":"INFO","time":"2023-11-17T15:29:23.570+0800","caller":"30_bluebell/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-11-17T15:29:28.167+0800","caller":"30_bluebell/main.go:38","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-11-17T15:29:28.175+0800","caller":"30_bluebell/main.go:46","msg":"mysql init success..."}
+{"level":"DEBUG","time":"2023-11-17T15:29:28.176+0800","caller":"30_bluebell/main.go:54","msg":"redis init success..."}
+{"level":"ERROR","time":"2023-11-17T15:29:29.760+0800","caller":"logger/logger.go:132","msg":"[Recovery from panic]","error":"runtime error: invalid memory address or nil pointer dereference","request":"POST /signup HTTP/1.1\r\nHost: localhost:9002\r\nAccept: */*\r\nAccept-Encoding: gzip, deflate, br\r\nConnection: keep-alive\r\nContent-Length: 79\r\nContent-Type: application/json\r\nUser-Agent: Apifox/1.0.0 (https://apifox.com)\r\n\r\n","stack":"goroutine 22 [running]:\nruntime/debug.Stack()\n\t/usr/local/go/src/runtime/debug/stack.go:24 +0x5e\ngoWebCli/router.SetUp.GinRecovery.func3.1()\n\t/Users/swibinchter/Documents/Golang/github.com/swibinchter/网易云课堂_goweb/30_bluebell/logger/logger.go:135 +0x290\npanic({0x14b7b80?, 0x1948920?})\n\t/usr/local/go/src/runtime/panic.go:914 +0x21f\ngoWebCli/controller.SignUpHandler(0xc000248100)\n\t/Users/swibinchter/Documents/Golang/github.com/swibinchter/网易云课堂_goweb/30_bluebell/controller/user.go:39 +0x283\ngithub.com/gin-gonic/gin.(*Context).Next(0xc000248100)\n\t/Users/swibinchter/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 +0x2b\ngoWebCli/router.SetUp.GinRecovery.func3(0xc0000c34e0?)\n\t/Users/swibinchter/Documents/Golang/github.com/swibinchter/网易云课堂_goweb/30_bluebell/logger/logger.go:146 +0x52\ngithub.com/gin-gonic/gin.(*Context).Next(0xc000248100)\n\t/Users/swibinchter/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 +0x2b\ngoWebCli/router.SetUp.GinLogger.func2(0xc000248100)\n\t/Users/swibinchter/Documents/Golang/github.com/swibinchter/网易云课堂_goweb/30_bluebell/logger/logger.go:86 +0x75\ngithub.com/gin-gonic/gin.(*Context).Next(...)\n\t/Users/swibinchter/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174\ngithub.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc00041e1a0, 0xc000248100)\n\t/Users/swibinchter/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620 +0x65b\ngithub.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc00041e1a0, {0x1630700?, 0xc0005142a0}, 0xc0001ca000)\n\t/Users/swibinchter/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576 +0x1dd\nnet/http.serverHandler.ServeHTTP({0x162f3c0?}, {0x1630700?, 0xc0005142a0?}, 0x6?)\n\t/usr/local/go/src/net/http/server.go:2938 +0x8e\nnet/http.(*conn).serve(0xc000090120, {0x1631168, 0xc0000921b0})\n\t/usr/local/go/src/net/http/server.go:2009 +0x5f4\ncreated by net/http.(*Server).Serve in goroutine 37\n\t/usr/local/go/src/net/http/server.go:3086 +0x5cb\n"}
+{"level":"INFO","time":"2023-11-17T15:29:29.760+0800","caller":"logger/logger.go:89","msg":"/signup","status":500,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"Apifox/1.0.0 (https://apifox.com)","errors":"","cost":0.000546685}
+{"level":"ERROR","time":"2023-11-17T15:29:36.903+0800","caller":"controller/user.go:21","msg":"SignUp with invalid param","error":"Key: 'ParamSignUp.RePassword' Error:Field validation for 'RePassword' failed on the 'required' tag"}
+{"level":"INFO","time":"2023-11-17T15:29:36.903+0800","caller":"logger/logger.go:89","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"Apifox/1.0.0 (https://apifox.com)","errors":"","cost":0.000182415}
+{"level":"INFO","time":"2023-11-17T15:30:22.704+0800","caller":"30_bluebell/main.go:94","msg":"Shutdown server ..."}
+{"level":"INFO","time":"2023-11-17T15:30:22.705+0800","caller":"30_bluebell/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-11-17T15:30:25.166+0800","caller":"30_bluebell/main.go:38","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-11-17T15:30:25.171+0800","caller":"30_bluebell/main.go:46","msg":"mysql init success..."}
+{"level":"DEBUG","time":"2023-11-17T15:30:25.173+0800","caller":"30_bluebell/main.go:54","msg":"redis init success..."}
+{"level":"ERROR","time":"2023-11-17T15:30:33.620+0800","caller":"controller/user.go:21","msg":"SignUp with invalid param","error":"Key: 'ParamSignUp.RePassword' Error:Field validation for 'RePassword' failed on the 'required' tag"}
+{"level":"INFO","time":"2023-11-17T15:30:33.620+0800","caller":"logger/logger.go:89","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"Apifox/1.0.0 (https://apifox.com)","errors":"","cost":0.000341315}
+{"level":"INFO","time":"2023-11-17T15:37:34.031+0800","caller":"30_bluebell/main.go:94","msg":"Shutdown server ..."}
+{"level":"INFO","time":"2023-11-17T15:37:34.032+0800","caller":"30_bluebell/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-11-17T15:40:16.477+0800","caller":"30_bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-11-17T15:40:16.483+0800","caller":"30_bluebell/main.go:47","msg":"mysql init success..."}
+{"level":"DEBUG","time":"2023-11-17T15:40:16.485+0800","caller":"30_bluebell/main.go:55","msg":"redis init success..."}
+{"level":"ERROR","time":"2023-11-17T15:40:20.007+0800","caller":"controller/user.go:21","msg":"SignUp with invalid param","error":"Key: 'ParamSignUp.re_password' Error:Field validation for 're_password' failed on the 'required' tag\nKey: 'ParamSignUp.re_password' Error:Field validation for 're_password' failed on the 'eqfield' tag"}
+{"level":"INFO","time":"2023-11-17T15:40:20.007+0800","caller":"logger/logger.go:89","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"Apifox/1.0.0 (https://apifox.com)","errors":"","cost":0.000348142}
+{"level":"INFO","time":"2023-11-17T15:42:32.114+0800","caller":"30_bluebell/main.go:101","msg":"Shutdown server ..."}
+{"level":"INFO","time":"2023-11-17T15:42:32.114+0800","caller":"30_bluebell/main.go:110","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-11-17T15:43:44.849+0800","caller":"30_bluebell/main.go:38","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-11-17T15:43:44.856+0800","caller":"30_bluebell/main.go:46","msg":"mysql init success..."}
+{"level":"DEBUG","time":"2023-11-17T15:43:44.858+0800","caller":"30_bluebell/main.go:54","msg":"redis init success..."}
+{"level":"ERROR","time":"2023-11-17T15:43:46.251+0800","caller":"controller/user.go:22","msg":"SignUp with invalid param","error":"Key: 'ParamSignUp.RePassword' Error:Field validation for 'RePassword' failed on the 'required' tag"}
+{"level":"INFO","time":"2023-11-17T15:43:46.251+0800","caller":"logger/logger.go:89","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"Apifox/1.0.0 (https://apifox.com)","errors":"","cost":0.00035662}
+{"level":"INFO","time":"2023-11-17T15:44:56.018+0800","caller":"logger/logger.go:89","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"Apifox/1.0.0 (https://apifox.com)","errors":"","cost":0.000042901}
+{"level":"INFO","time":"2023-11-17T15:44:58.803+0800","caller":"30_bluebell/main.go:94","msg":"Shutdown server ..."}
+{"level":"INFO","time":"2023-11-17T15:44:58.803+0800","caller":"30_bluebell/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-11-17T15:45:03.800+0800","caller":"30_bluebell/main.go:38","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-11-17T15:45:03.805+0800","caller":"30_bluebell/main.go:46","msg":"mysql init success..."}
+{"level":"DEBUG","time":"2023-11-17T15:45:03.807+0800","caller":"30_bluebell/main.go:54","msg":"redis init success..."}
+{"level":"ERROR","time":"2023-11-17T15:45:05.357+0800","caller":"controller/user.go:22","msg":"SignUp with invalid param","error":"Key: 'ParamSignUp.RePassword' Error:Field validation for 'RePassword' failed on the 'eqfield' tag"}
+{"level":"INFO","time":"2023-11-17T15:45:05.357+0800","caller":"logger/logger.go:89","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"Apifox/1.0.0 (https://apifox.com)","errors":"","cost":0.000251381}
+{"level":"INFO","time":"2023-11-17T15:45:22.799+0800","caller":"logger/logger.go:89","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"Apifox/1.0.0 (https://apifox.com)","errors":"","cost":0.000474509}
+{"level":"INFO","time":"2023-11-17T15:49:53.487+0800","caller":"30_bluebell/main.go:94","msg":"Shutdown server ..."}
+{"level":"INFO","time":"2023-11-17T15:49:53.489+0800","caller":"30_bluebell/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-11-17T15:56:45.865+0800","caller":"30_bluebell/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-11-17T15:56:45.868+0800","caller":"30_bluebell/main.go:47","msg":"mysql init success..."}
+{"level":"DEBUG","time":"2023-11-17T15:56:45.869+0800","caller":"30_bluebell/main.go:55","msg":"redis init success..."}
+{"level":"ERROR","time":"2023-11-17T15:56:47.690+0800","caller":"controller/user.go:23","msg":"SignUp with invalid param","error":"Key: 'ParamSignUp.re_password' Error:Field validation for 're_password' failed on the 'eqfield' tag"}
+{"level":"INFO","time":"2023-11-17T15:56:47.691+0800","caller":"logger/logger.go:89","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"Apifox/1.0.0 (https://apifox.com)","errors":"","cost":0.000359401}
+{"level":"ERROR","time":"2023-11-17T15:57:27.467+0800","caller":"controller/user.go:23","msg":"SignUp with invalid param","error":"Key: 'ParamSignUp.re_password' Error:Field validation for 're_password' failed on the 'required' tag"}
+{"level":"INFO","time":"2023-11-17T15:57:27.468+0800","caller":"logger/logger.go:89","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"Apifox/1.0.0 (https://apifox.com)","errors":"","cost":0.001601117}

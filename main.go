@@ -5,9 +5,11 @@ package main
 import (
 	"context"
 	"fmt"
+	"goWebCli/controller"
 	"goWebCli/dao/mysql"
 	"goWebCli/dao/redis"
 	"goWebCli/logger"
+	"goWebCli/pkg/snowflake"
 	"goWebCli/router"
 	"goWebCli/setting"
 	"log"
@@ -52,10 +54,22 @@ func main() {
 	defer redis.Close()
 	zap.L().Debug("redis init success...")
 
-	// 5.注册路由
+	// 初始化分布式ID生成包
+	if err := snowflake.Init(setting.Config.StartTime, setting.Config.MachineID); err != nil {
+		fmt.Printf("redis init failed, err:%v\n", err)
+		return
+	}
+
+	// 初始化gin框架内置参数校验器的错误提示的中文翻译器
+	if err := controller.InitTrans("zh"); err != nil {
+		fmt.Printf("validator trans init failed, err:%v\n", err)
+		return
+	}
+
+	// 注册路由
 	r := router.SetUp()
 
-	// 6.启动服务，设置优雅关机(处理完所有请求后再关机而非直接强制关机)
+	// 启动服务，设置优雅关机(处理完所有请求后再关机而非直接强制关机)
 	srv := &http.Server{
 		Addr:    fmt.Sprintf(":%d", setting.Config.Port),
 		Handler: r,

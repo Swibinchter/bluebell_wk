@@ -1,10 +1,12 @@
 # 本文件中存放配置信息
 
 # 项目
-name: "web_app"         # 项目名称
-mode: "dev"             # 项目环境
-version: "1.0.0"        # 项目版本
-port: 9002              # 服务端口
+name: "web_app"           # 项目名称
+mode: "dev"               # 项目环境
+version: "1.0.0"          # 项目版本
+port: 9002                # 服务端口
+start_time: "2023-01-01"  # 分布式ID生成的起始时间 
+machine_id: 1             # 分布式ID生成的机器编码
 
 # 日志
 log:
