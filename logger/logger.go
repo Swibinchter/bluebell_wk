@@ -19,7 +19,7 @@ import (
 )
 
 // Init初始化Logger
-func Init(cfg *setting.LogConfig) (err error) {
+func Init(cfg *setting.LogConfig, mode string) (err error) {
 	// 设置日志的编码
 	encoder := getEncoder()
 
@@ -39,8 +39,19 @@ func Init(cfg *setting.LogConfig) (err error) {
 		return err
 	}
 
+	// 按照是否为开发模式决定日志是否输出到终端上
+	var core zapcore.Core
+	if mode == gin.DebugMode {
+		// 当前是开发模式("debug")，日志同时输出到终端和文件中
+		consoleEncoder := zapcore.NewConsoleEncoder(zap.NewDevelopmentEncoderConfig())
+		core = zapcore.NewTee(
+			zapcore.NewCore(encoder, writeSyncer, l),
+			zapcore.NewCore(consoleEncoder, zapcore.Lock(os.Stdout), zap.DebugLevel),
+		)
+	} else {
+		core = zapcore.NewCore(encoder, writeSyncer, l)
+	}
 	// 创建一个新的日志器
-	core := zapcore.NewCore(encoder, writeSyncer, l)
 	lg := zap.New(core, zap.AddCaller())
 
 	// 替换zap默认的全局日志器，其他包中即可调用zap.L()

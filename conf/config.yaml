@@ -2,11 +2,12 @@
 
 # 项目
 name: "web_app"           # 项目名称
-mode: "dev"               # 项目环境
+mode: "debug"             # 项目模式 debug\release\test"
 version: "1.0.0"          # 项目版本
 port: 9002                # 服务端口
 start_time: "2023-01-01"  # 分布式ID生成的起始时间 
 machine_id: 1             # 分布式ID生成的机器编码
+salt: "swibinchter"       # 用于用户密码和token的加密
 
 # 日志
 log:
@@ -22,7 +23,7 @@ mysql:
   port: 3306              # 端口
   user: "root"            # 用户名
   password: "root123456"  # 密码
-  db_name: "test"          # 连接的数据库名
+  db_name: "bluebell"          # 连接的数据库名
   max_open_conns: 200     # 最大活跃连接数量
   max_idle_conns: 50      # 最大空闲连接数量
 

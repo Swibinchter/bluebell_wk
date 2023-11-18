@@ -3,6 +3,7 @@ package router
 import (
 	"goWebCli/controller"
 	"goWebCli/logger"
+	"goWebCli/middlewares"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -10,7 +11,12 @@ import (
 
 // 路由的初始化和分配
 
-func SetUp() *gin.Engine {
+func SetUp(mode string) *gin.Engine {
+	// 当配置文件里的mode是发布模式，设置gin的模式
+	if mode == gin.ReleaseMode {
+		gin.SetMode(gin.ReleaseMode)
+	}
+
 	// 创建一个新engine，不使用默认的default
 	r := gin.New()
 	// 模仿default启用两个中间件，以便将日志输出给zap
@@ -22,6 +28,12 @@ func SetUp() *gin.Engine {
 	// 业务路由
 	// 注册
 	r.POST("/signup", controller.SignUpHandler)
+	// 登录
+	r.POST("/login", controller.LoginHandler)
+	// 测试
+	r.POST("/ping", middlewares.JWTAuthMiddleware(), func(c *gin.Context) {
+		controller.ResponseSuccess(c,nil)
+	})
 
 	return r
 }

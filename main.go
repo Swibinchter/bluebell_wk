@@ -30,7 +30,7 @@ func main() {
 	}
 
 	// 2.初始化日志，使用zap库，接收Gin框架中的日志记录
-	if err := logger.Init(setting.Config.LogConfig); err != nil {
+	if err := logger.Init(setting.Config.LogConfig, setting.Config.Mode); err != nil {
 		fmt.Printf("logger init failed, err:%v\n", err)
 		return
 	}
@@ -67,7 +67,7 @@ func main() {
 	}
 
 	// 注册路由
-	r := router.SetUp()
+	r := router.SetUp(setting.Config.Mode)
 
 	// 启动服务，设置优雅关机(处理完所有请求后再关机而非直接强制关机)
 	srv := &http.Server{
