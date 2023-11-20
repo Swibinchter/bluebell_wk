@@ -1,10 +1,9 @@
-package middlewares
+package middleware
 
 // 用户认证的中间件
 
 import (
 	"errors"
-	"fmt"
 	"goWebCli/controller"
 	"goWebCli/pkg/jwt"
 	"strings"
@@ -19,7 +18,7 @@ func JWTAuthMiddleware() func(c *gin.Context) {
 		// 此处按照Token位于Header的Authorization中，并使用Bearer开头，具体要看业务请求
 		// Authorization: Bearer xxxxxx.xx.xx / X-TOKEN: xxx.xx.xx
 		authHeader := c.Request.Header.Get("Authorization")
-		fmt.Printf("获取到的请求Header是%v\n", authHeader)
+		// fmt.Printf("获取到的请求Header是%v\n", authHeader)
 		// 获取不到，返回需要登录的提示
 		if authHeader == "" {
 			controller.ResponseError(c, controller.CodeNeedLogin)
@@ -40,7 +39,9 @@ func JWTAuthMiddleware() func(c *gin.Context) {
 		mc, err := jwt.ParseToken(parts[1])
 		// 如果解析出现错误
 		if err != nil {
-			if errors.Is(err, errors.New("invalid token")) {
+			if errors.Is(err, jwt.ErrInvalidToken) {
+				// if err == errors.New("invalid token") {
+				// if err.Error() == "invalid token" {
 				controller.ResponseError(c, controller.CodeInvalidToken)
 			} else {
 				controller.ResponseError(c, controller.CodeServerBusy)

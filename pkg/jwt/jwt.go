@@ -14,10 +14,10 @@ import (
 	"time"
 
 	"github.com/dgrijalva/jwt-go"
+	"go.uber.org/zap"
 )
 
-// 定义token过期时间
-const TokenExpireDuration = time.Hour * 2
+var ErrInvalidToken = errors.New("invalid token")
 
 // 在默认官方字段之外增加一个username
 type MyClaims struct {
@@ -34,7 +34,7 @@ func GenToken(userID int64, username string) (string, error) {
 		username,
 		jwt.StandardClaims{
 			// 过期时间
-			ExpiresAt: time.Now().Add(TokenExpireDuration).Unix(),
+			ExpiresAt: time.Now().Add(time.Duration(setting.Config.JWTExpire * int64(time.Hour))).Unix(),
 			// 签发人
 			Issuer: "bluebell",
 		},
@@ -52,13 +52,14 @@ func ParseToken(tokenString string) (*MyClaims, error) {
 	token, err := jwt.ParseWithClaims(tokenString, mc, func(t *jwt.Token) (interface{}, error) {
 		return []byte(setting.Config.Salt), nil
 	})
-	if err != nil {
+	// token.Valid表示token是否通过验证
+	if !token.Valid {
+		zap.L().Error("invalid token", zap.Error(err))
+		return nil, ErrInvalidToken
+	} else if err != nil {
+		zap.L().Error("parse token failed", zap.Error(err))
 		return nil, err
 	}
-	// token.Valid表示token是否通过验证
-	if token.Valid {
-		return mc, nil
-	}
-	// 没有通过验证的话，返回错误提示
-	return nil, errors.New("invalid token")
+	// token通过验证且err==nil
+	return mc, nil
 }

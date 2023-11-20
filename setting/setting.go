@@ -18,6 +18,7 @@ type AppConfig struct {
 	StartTime    string `mapstructure:"start_time"`
 	MachineID    int64  `mapstructure:"machine_id"`
 	Salt         string `mapstructure:"salt"`
+	JWTExpire    int64  `mapstructure:"jwt_expire"`
 	*LogConfig   `mapstructure:"log"`
 	*MysqlConfig `mapstructure:"mysql"`
 	*RedisConfig `mapstructure:"redis"`

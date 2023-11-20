@@ -10,13 +10,6 @@ import (
 
 // 将每一步数据库的操作封装成函数，让logic/server层依据业务来调用
 
-// 定义错误类型
-var (
-	ErrorUserExist       = errors.New("用户名已存在")
-	ErrorUserNotExist    = errors.New("用户名不存在")
-	ErrorInvalidPassword = errors.New("用户名或密码错误")
-)
-
 // CheckUserExist 检查对应用户名是否存在，不存在的话返回nil，存在的话返回user结构体实例
 func CheckUserExist(username string) (user model.User, err error) {
 	// 编写查询用户名对应的语句，用反引号包裹确保语句不被转义

@@ -4,10 +4,11 @@
 name: "web_app"           # 项目名称
 mode: "debug"             # 项目模式 debug\release\test"
 version: "1.0.0"          # 项目版本
-port: 9002                # 服务端口
+port: 8081                # 服务端口
 start_time: "2023-01-01"  # 分布式ID生成的起始时间 
 machine_id: 1             # 分布式ID生成的机器编码
 salt: "swibinchter"       # 用于用户密码和token的加密
+jwt_expire: 24            # token过期时间，小时
 
 # 日志
 log:

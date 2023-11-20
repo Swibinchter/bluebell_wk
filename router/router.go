@@ -3,8 +3,7 @@ package router
 import (
 	"goWebCli/controller"
 	"goWebCli/logger"
-	"goWebCli/middlewares"
-	"net/http"
+	"goWebCli/middleware"
 
 	"github.com/gin-gonic/gin"
 )
@@ -23,17 +22,30 @@ func SetUp(mode string) *gin.Engine {
 	r.Use(logger.GinLogger(), logger.GinRecovery(true))
 
 	// 分配路由
-	// 当请求没有匹配到任何路径时的处理
-	r.NoRoute(func(c *gin.Context) { c.JSON(http.StatusOK, gin.H{"msg": "404"}) })
 	// 业务路由
+
+	// 定义一个路由组
+	v1 := r.Group("/api/v1")
+
 	// 注册
-	r.POST("/signup", controller.SignUpHandler)
+	v1.POST("/signup", controller.SignUpHandler)
 	// 登录
-	r.POST("/login", controller.LoginHandler)
-	// 测试
-	r.POST("/ping", middlewares.JWTAuthMiddleware(), func(c *gin.Context) {
-		controller.ResponseSuccess(c,nil)
-	})
+	v1.POST("/login", controller.LoginHandler)
+
+	// 登录后才能访问的路由
+	// 调用JWT认证中间件
+	v1.Use(middleware.JWTAuthMiddleware())
+	{
+		// 查询社区的帖子分类
+		v1.GET("/community",controller.CommunityHandler)
+		// 根据id查询社区分类标签的详情，通过路径传递参数id
+		v1.GET("community/:id",controller.CommunityDetailHandler)
+		
+		// 创建帖子
+		v1.POST("/post", controller.CreatePostHandler)
+
+
+	}
 
 	return r
 }
