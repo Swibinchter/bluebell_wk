@@ -3,6 +3,7 @@ package mysql
 import (
 	"database/sql"
 	"errors"
+	"fmt"
 	"goWebCli/model"
 
 	"go.uber.org/zap"
@@ -32,17 +33,18 @@ func GetCommunityList() (data []*model.Community, err error) {
 	return
 }
 
-// GetCommunityDetailByID 根据ID查询社区详情
-func GetCommunityDetailByID(id int64) (data *model.CommunityDetail, err error) {
+// GetCommunityDetailById 根据ID查询社区详情
+func GetCommunityDetailById(id int64) (community *model.CommunityDetail, err error) {
 	// 定义sql语句，用反引号包裹
 	sqlStr := `select community_id, community_name, introduction, create_time 
 			from community where community_id = ?`
 	// 在数据库中查询
-	data = new(model.CommunityDetail)
-	err = db.Get(data, sqlStr, id)
+	community = new(model.CommunityDetail)
+	err = db.Get(community, sqlStr, id)
 	if errors.Is(err, sql.ErrNoRows) {
 		zap.L().Warn("can not find this community_id")
-		err = ErrorUserIvalidID
+		err = ErrorInvalidID
 	}
+	fmt.Printf("查询到的community数据是%v\n", community)
 	return
 }

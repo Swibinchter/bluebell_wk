@@ -3,6 +3,7 @@ package controller
 import (
 	"goWebCli/logic"
 	"goWebCli/model"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
@@ -30,10 +31,10 @@ func CreatePostHandler(c *gin.Context) {
 	}
 
 	// 从当前上下文中获取用户id
-	p.AuthorID, err = GetCurrentUser(c)
+	p.AuthorID, err = GetCurrentUserId(c)
 	if err != nil {
 		zap.L().Error("GetCurrentUser failed", zap.Error(err))
-		ResponseError(c, CodeServerBusy)
+		ResponseError(c, CodeNeedLogin)
 		return
 	}
 
@@ -48,4 +49,29 @@ func CreatePostHandler(c *gin.Context) {
 
 	// 返回响应
 	ResponseSuccess(c, nil)
+}
+
+// GetPostDetailHandler 处理通过id获取帖子详情的请求
+func GetPostDetailHandler(c *gin.Context) {
+	// 获取参数、校验参数
+	// 获取url中的字符串id
+	pidStr := c.Param("id")
+	// 转换成int类型
+	pid, err := strconv.ParseInt(pidStr, 10, 64)
+	if err != nil {
+		zap.L().Error("Get post id failed", zap.Error(err))
+		ResponseError(c, CodeInvalidParam)
+		return
+	}
+
+	// 业务处理
+	data, err:=logic.GetPostById(pid)
+	if err != nil {
+		zap.L().Error("logic.GetPost failed", zap.Error(err))
+		ResponseError(c, CodeServerBusy)
+		return
+	}
+
+	// 返回响应
+	ResponseSuccess(c, data)
 }

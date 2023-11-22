@@ -3,9 +3,12 @@ package mysql
 import (
 	"database/sql"
 	"errors"
+	"fmt"
 	"goWebCli/model"
 	"goWebCli/pkg/md5"
 	"goWebCli/setting"
+
+	"go.uber.org/zap"
 )
 
 // 将每一步数据库的操作封装成函数，让logic/server层依据业务来调用
@@ -44,5 +47,20 @@ func ValidatePassWord(plainPassword, password string) (err error) {
 	if !md5.ValidatePassWord(plainPassword, setting.Config.Salt, password) {
 		return ErrorInvalidPassword
 	}
+	return
+}
+
+// GetUserById 根据用户id查询用户的名字
+func GetUserById(userID int64) (user *model.User, err error) {
+	// 创建sql语句，用反引号包裹
+	sqlStr := `select user_id, username from user where user_id = ?`
+	// 执行sql语句
+	user = new(model.User)
+	err = db.Get(user, sqlStr, userID)
+	if errors.Is(err, sql.ErrNoRows) {
+		zap.L().Warn("can not find this user_id")
+		err = ErrorInvalidID
+	}
+	fmt.Printf("查询到的username数据是%v\n", user)
 	return
 }

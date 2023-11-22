@@ -14,5 +14,5 @@ func GetCommunityList() ([]*model.Community, error) {
 
 func GetCommunityDetail(id int64) (*model.CommunityDetail, error) {
 	// 调用mysql的方法返回community的详情数据
-	return mysql.GetCommunityDetailByID(id)
+	return mysql.GetCommunityDetailById(id)
 }

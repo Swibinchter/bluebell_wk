@@ -38,7 +38,7 @@ func CommunityDetailHandler(c *gin.Context) {
 	id, err := strconv.ParseInt(idStr, 10, 64)
 	if err != nil {
 		zap.L().Error("get community_id failed", zap.Error(err))
-		ResponseError(c, CodeServerBusy)
+		ResponseError(c, CodeInvalidParam)
 		return
 	}
 

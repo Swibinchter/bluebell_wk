@@ -33,17 +33,21 @@ func SetUp(mode string) *gin.Engine {
 	v1.POST("/login", controller.LoginHandler)
 
 	// 登录后才能访问的路由
+	// 查询社区的帖子分类
+	v1.GET("/community",controller.CommunityHandler)
 	// 调用JWT认证中间件
 	v1.Use(middleware.JWTAuthMiddleware())
 	{
-		// 查询社区的帖子分类
-		v1.GET("/community",controller.CommunityHandler)
 		// 根据id查询社区分类标签的详情，通过路径传递参数id
 		v1.GET("community/:id",controller.CommunityDetailHandler)
 		
 		// 创建帖子
 		v1.POST("/post", controller.CreatePostHandler)
+		// 根据id查询帖子详情
+		v1.GET("/post/:id",controller.GetPostDetailHandler)
 
+		// 投票
+		v1.POST("/vote",controller.PostVoteHandler)
 
 	}
 

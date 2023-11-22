@@ -10,12 +10,12 @@ import (
 
 // 连接redis数据库
 
-var rdb *redis.Client
+var client *redis.Client
 
 // Init 初始化连接redis数据库
 func Init(cfg *setting.RedisConfig) (err error) {
 	// 从配置文件中获取连接信息，并连接数据库
-	rdb = redis.NewClient(&redis.Options{
+	client = redis.NewClient(&redis.Options{
 		Addr:     fmt.Sprintf("%s:%d", cfg.Host, cfg.Port),
 		Password: cfg.Password,
 		DB:       cfg.DB,
@@ -23,11 +23,11 @@ func Init(cfg *setting.RedisConfig) (err error) {
 	})
 
 	// 测试连接是否成功
-	_, err = rdb.Ping(context.Background()).Result()
+	_, err = client.Ping(context.Background()).Result()
 
 	return
 }
 
 func Close() {
-	_ = rdb.Close()
+	_ = client.Close()
 }

@@ -10,6 +10,7 @@ JWT是将用户信息和有效期等信息通过签名加密成一个字符串(H
 
 import (
 	"errors"
+	"fmt"
 	"goWebCli/setting"
 	"time"
 
@@ -52,8 +53,9 @@ func ParseToken(tokenString string) (*MyClaims, error) {
 	token, err := jwt.ParseWithClaims(tokenString, mc, func(t *jwt.Token) (interface{}, error) {
 		return []byte(setting.Config.Salt), nil
 	})
+	fmt.Printf("获取到的token是%v\n", token)
 	// token.Valid表示token是否通过验证
-	if !token.Valid {
+	if token == nil || !token.Valid {
 		zap.L().Error("invalid token", zap.Error(err))
 		return nil, ErrInvalidToken
 	} else if err != nil {

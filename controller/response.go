@@ -42,7 +42,7 @@ var codeMsgMap = map[int64]string{
 type ResponseData struct {
 	Code int64       `json:"code"`
 	Msg  interface{} `json:"msg"`
-	Data interface{} `json:"data"`
+	Data interface{} `json:"data,omitempty"`
 }
 
 // 根据错误代码查询提示信息
